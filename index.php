@@ -16,10 +16,10 @@ function loadXMLDoc() {
       this.responseText;
     }
   };
-  echo "{";
-  echo xhttp.open("GET", "emails.xml", true);;
-   echo xhttp.send();;
-    echo "}";
+
+  echo xhttp.open("GET", "emails.xml", true);
+   echo xhttp.send();
+    
 }
 </script>
 </body>
