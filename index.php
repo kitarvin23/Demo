@@ -2,7 +2,7 @@
 <html>
 <body onload="loadXMLDoc()">
 
-<h2>Using the XMLHttpRequest Object</h2>
+<h2>Using the XMLHttpRequest Object123</h2>
 
 <div id="demo">
 </div>
