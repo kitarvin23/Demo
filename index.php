@@ -17,8 +17,8 @@ function loadXMLDoc() {
     }
   };
 
-  echo xhttp.open("GET", "emails.xml", true);
-   echo xhttp.send();
+   xhttp.open("GET", "emails.xml", true)
+   xhttp.send()
     
 }
 </script>
