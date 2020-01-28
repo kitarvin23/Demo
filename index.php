@@ -1,27 +1,35 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
+<?php
+// Create connection
+$con = mysqli_connect("localhost","id12382478_kitarvin23","123456","id12382478_rss");	
 
-<!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-  <h3 class="w3-bar-item">Menu</h3>
-  <a href="xml.php" class="w3-bar-item w3-button">XML file</a>
-  <a href="rss.php" class="w3-bar-item w3-button">RSS file</a>
+// Check connection
+ if (mysqli_connect_errno($con)) {
+ echo "Database connection failed!: " . mysqli_connect_error();
+ }
  
-</div>
+ $sql = "SELECT * FROM rss_info ORDER BY id DESC LIMIT 20";
 
-<!-- Page Content -->
-<div style="margin-left:25%">
-
-<div class="w3-container w3-teal">
-  <h1>Arvin kit Gallego</h1>
-</div>
-
-
-</div>
-      
-</body>
-</html>
+ $query = mysqli_query($con,$sql);
+ 
+ header( "Content-type:");
+ 
+ echo "<?xml version='1.0' encoding='UTF-8'?>
+ <rss version='2.0'>
+ <channel>
+ <title></title>
+ <link></link>
+ <language>en-us</language>";
+ 
+ while($row = mysqli_fetch_array($query)){
+   $title=$row["title"];
+   $link=$row["link"];
+   $link=$row["description"];
+ 
+   echo "<item>
+   <title>$title</title>
+   <link>$link</link>
+   <link>$description</link>
+   </item>";
+ }
+ echo "</channel></rss>";
+?>
