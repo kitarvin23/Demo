@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-<body onload="loadXMLDoc()">
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
 
-<h2>Using the XMLHttpRequest Object</h2>
-
-<div id="demo">
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="xml.php" class="w3-bar-item w3-button">XML file</a>
+  <a href="rss.php" class="w3-bar-item w3-button">RSS file</a>
+ 
 </div>
 
-<script>
-function loadXMLDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
+<!-- Page Content -->
+<div style="margin-left:25%">
 
-   xhttp.open("GET", "emails.xml", true)
-   xhttp.send()
-    
-}
-</script>
+<div class="w3-container w3-teal">
+  <h1>Arvin kit Gallego</h1>
+</div>
+
+
+</div>
+      
 </body>
 </html>
