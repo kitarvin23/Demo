@@ -23,7 +23,7 @@
         echo "<gadget>
         <brand>$brand</brand>
         <cost>$cost</cost>
-        <artist>$year</artist>
+        <year>$year</year>
         <color>$color</color>
         </gadget>";
     }
