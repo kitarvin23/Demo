@@ -30,7 +30,7 @@ $con = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com", "ad
    <link>$id</link>
    <title>$title</title>
    <link>$link</link>
-   <link>description</link>
+   <link>$description</link>
 
    </item>";
  }
