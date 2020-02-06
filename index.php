@@ -18,9 +18,9 @@
      $color = $data->getElementsByTagName("color")->item(0)->nodeValue;
  
  echo "<ul>
-            <h2>$bramd</h2>
+            <h2>$brand</h2>
               <ul>
-                  <li>Artist: $cost </li>
+                  <li>Cost: $cost </li>
                   <li>Year: $year </li>
                   <li>Album: $color </li>
               </ul>
