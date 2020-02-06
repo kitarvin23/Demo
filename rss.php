@@ -26,13 +26,13 @@ $con = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com", "ad
    $link=$row["link"];
    $description=$row["description"];
 
-   echo "<item>
+   echo "<song>
    <ID>$id</ID>
    <title>$title</title>
    <link>$link</link>
    <Description>$description</Description>
 
-   </item>";
+   </song>";
  }
  echo "</channel></rss>";
 ?>
