@@ -1,26 +1,34 @@
-//rss.php/github
-
-<?php 
-
-$rss= '<?xml version="1.0" encoding="UTF-8"?>';
-$rss .= '<rss version="2.0">';
-$rss .= '<channel>';
-
-$connect = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com", "admin", "root1234", "db_1820771") or die (mysqli_error($connect));
-$sql = "SELECT * FROM rss_info";
-$query = mysqli_query($connect,$sql) or die (mysqli_error($connect));
+<?php
+ $domOBJ = new DOMDocument();
+ $domOBJ->load("https://kitarvin23.herokuapp.com/rss.php");//XML page URL
  
+ $content = $domOBJ->getElementsByTagName("item");
+?>
 
-while($record= mysqli_fetch_assoc($query)) {
-    extract($record);
-    $rss .= '<book>';
-    $rss .= '<title>' .$title . '</title>';
-    $rss .= '<link>' . $link . '</link>';
-    $rss .= '<description>' . $description . '</description>';
-    $rss .= '<album>' . $album . '</album>';
-    $rss .= '</book>';
-}
-$rss .= '</channel>';
-$rss .= '</rss>';
+ <h1>Tracks</h1>
 
-echo  $rss  ; 
+ <?php
+ foreach( $content as $data )
+ {?>
+     <div class="border">
+     <?php
+     $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
+     $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
+     $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
+     $album = $data->getElementsByTagName("album")->item(0)->nodeValue;
+     echo "<ul>
+            <h2>$title</h2>
+              <ul>
+                  <li>Artist: $title </li>
+                  <li>Genre: $description </li>
+                  <li>Genre: $link </li>
+                  <li>Album: $album </li>
+              </ul>
+          </ul>";
+    ?>
+     </div>
+  <?php
+ }
+?>
+</div>
+</div>
