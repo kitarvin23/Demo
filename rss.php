@@ -27,10 +27,10 @@ $con = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com", "ad
    $description=$row["description"];
 
    echo "<item>
-   <link>$id</link>
+   <ID>$id</ID>
    <title>$title</title>
    <link>$link</link>
-   <link>$description</link>
+   <Description>$description</Description>
 
    </item>";
  }
