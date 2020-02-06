@@ -2,10 +2,10 @@
  $domOBJ = new DOMDocument();
  $domOBJ->load("https://kitarvin23.herokuapp.com/rss.php");//XML page URL
  
- $content = $domOBJ->getElementsByTagName("song");
+ $content = $domOBJ->getElementsByTagName("gadget");
 ?>
 
- <h1>Songs</h1>
+ <h1>Gadgets</h1>
 
  <?php
  foreach( $content as $data )
