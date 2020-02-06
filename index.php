@@ -21,7 +21,7 @@
             <h2>$bramd</h2>
               <ul>
                   <li>Artist: $cost </li>
-                  <li>Genre: $year </li>
+                  <li>Year: $year </li>
                   <li>Album: $color </li>
               </ul>
           </ul>";
