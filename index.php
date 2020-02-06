@@ -15,15 +15,14 @@ $domOBJ->load("https://kitarvin23.herokuapp.com/rss.php");//XML page URL
    $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
    $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
 
-   echo "
-            <li><h2>$title - $id</h2>
-            <ul>
-                <li>$link</li>
-                <li>$description</li>
-            </ul>
-            </li>
-         ";
- 
+echo "<ul>
+            <h2>$title</h2>
+              <ul>
+                  <li>ID: $id </li>
+                  <li>link: $link </li>
+                  <li>description: $description </li>
+              </ul>
+          </ul>";
  
  }
 ?>
