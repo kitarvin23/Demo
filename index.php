@@ -12,16 +12,16 @@
  {?>
      <div class="border">
      <?php
-     $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
-     $artist = $data->getElementsByTagName("artist")->item(0)->nodeValue;
-     $genre = $data->getElementsByTagName("genre")->item(0)->nodeValue;
-     $album = $data->getElementsByTagName("album")->item(0)->nodeValue;
+     $brand = $data->getElementsByTagName("brand")->item(0)->nodeValue;
+     $cost = $data->getElementsByTagName("cost")->item(0)->nodeValue;
+     $year = $data->getElementsByTagName("year")->item(0)->nodeValue;
+     $color = $data->getElementsByTagName("color")->item(0)->nodeValue;
      echo "<ul>
-            <h2>$title</h2>
+            <h2>$brand</h2>
               <ul>
-                  <li>Artist: $artist </li>
-                  <li>Genre: $genre </li>
-                  <li>Album: $album </li>
+                  <li>Artist: $cost </li>
+                  <li>Genre: $year </li>
+                  <li>Album: $color </li>
               </ul>
           </ul>";
     ?>
