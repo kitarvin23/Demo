@@ -1,34 +1,34 @@
-<?php
- $domOBJ = new DOMDocument();
- $domOBJ->load("https://kitarvin23.herokuapp.com/index.php");//XML page URL
- 
- $content = $domOBJ->getElementsByTagName("item");
+<?php 
+    $conn = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com", "admin", "root1234") or die (mysqli_error($conn));
+    $db = mysqli_select_db($conn, "db_1820771");
+
+    if(mysqli_connect_errno($conn)){
+        echo "Database connection failed!: ". mysqli_connect_errno();
+    }
+    $sql = "SELECT * FROM rss_info";
+    $q = mysqli_query($conn, $sql);
+
+    header("Content-type: text/xml");
+
+    echo "<?xml version='1.0' encoding='UTF-8'?>
+        <rss version='2.0'><channel>";
+    
+    while($r = mysqli_fetch_array($q)){
+
+        $title = $r['title'];
+        $description = $r['description'];
+        $link = $r['link'];
+        $album = $r['album'];
+
+        echo "<track>
+        <title>$title</title>
+        <description>$descripiton</description>
+        <link>$link</link>
+        <album>$album</album>
+        </track>";
+    }
+    echo "</channel></rss>";
 ?>
 
- <h1>Tracks</h1>
 
- <?php
- foreach( $content as $data )
- {?>
-     <div class="border">
-     <?php
-     $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
-     $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
-     $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
-     $album = $data->getElementsByTagName("album")->item(0)->nodeValue;
-     echo "<ul>
-            <h2>$title</h2>
-              <ul>
-                  <li>Artist: $title </li>
-                  <li>Genre: $description </li>
-                  <li>Genre: $link </li>
-                  <li>Album: $album </li>
-              </ul>
-          </ul>";
-    ?>
-     </div>
-  <?php
- }
-?>
-</div>
-</div>
+
