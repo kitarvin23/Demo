@@ -16,14 +16,8 @@
      $cost = $data->getElementsByTagName("cost")->item(0)->nodeValue;
      $year = $data->getElementsByTagName("year")->item(0)->nodeValue;
      $color = $data->getElementsByTagName("color")->item(0)->nodeValue;
-     echo "<ul>
-            <h2>$brand</h2>
-              <ul>
-                  <li>Artist: $cost </li>
-                  <li>Genre: $year </li>
-                  <li>Album: $color </li>
-              </ul>
-          </ul>";
+  
+  echo $brand;
     ?>
      </div>
   <?php
