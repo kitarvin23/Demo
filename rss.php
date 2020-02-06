@@ -21,12 +21,17 @@ $con = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com", "ad
  <language>en-us</language>";
  
  while($row = mysqli_fetch_array($query)){
+   $id=$row["id"];
    $title=$row["title"];
    $link=$row["link"];
- 
+   $description=$row["description"];
+
    echo "<item>
+   <link>$id</link>
    <title>$title</title>
    <link>$link</link>
+   <link>description</link>
+
    </item>";
  }
  echo "</channel></rss>";
