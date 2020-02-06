@@ -15,13 +15,9 @@
      $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
      $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
      $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
-     echo "<ul>
-            <h2>$title</h2>
-              <ul>
-                  <li>Artist: $description </li>
-                  <li>Genre: $link </li>
-              </ul>
-          </ul>";
+    echo $title;
+    echo $description;
+    echo $link;
     ?>
      </div>
   <?php
