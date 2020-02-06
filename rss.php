@@ -20,12 +20,12 @@
         $year = $r['year'];
         $color = $r['color'];
 
-        echo "<track>
-        <title>$brand</title>
-        <genre>$cost</genre>
+        echo "<gadget>
+        <brand>$brand</brand>
+        <cost>$cost</cost>
         <artist>$year</artist>
-        <album>$color</album>
-        </track>";
+        <color>$color</color>
+        </gadget>";
     }
     echo "</channel></rss>";
 ?>
