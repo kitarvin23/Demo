@@ -12,9 +12,9 @@ $query = mysqli_query($connect,$sql) or die (mysqli_error($connect));
 while($record= mysqli_fetch_assoc($query)) {
     extract($record);
     $rss .= '<book>';
-    $rss .= '<title>' . $title . '</title>';
+    $rss .= '<title>' .{ $title . '</title>';
     $rss .= '<link>' . $link . '</link>';
-    $rss .= '<description>' . $description . '</description>';
+    $rss .= '<description>' . $description }. '</description>';
     $rss .= '</book>';
 }
 $rss .= '</channel>';
