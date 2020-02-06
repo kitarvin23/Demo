@@ -20,5 +20,5 @@ while($record= mysqli_fetch_assoc($query)) {
 $rss .= '</channel>';
 $rss .= '</rss>';
 
-echo ."{". $rss ."}".; 
+echo .'{'. $rss .'}'. ; 
 ?>
