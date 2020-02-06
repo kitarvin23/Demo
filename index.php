@@ -10,12 +10,14 @@
  foreach( $content as $data )
  {
    $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
+   $id = $data->getElementsByTagName("id")->item(0)->nodeValue;
    $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
    $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
   
     echo "
             <li>$title
             <ul>
+                <li>$id</li>
                 <li>$link</li>
                 <li>$description</li>
             </ul>
