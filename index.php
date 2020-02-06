@@ -17,7 +17,7 @@ $domOBJ->load("https://kitarvin23.herokuapp.com/rss.php");//XML page URL
      $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
      $item = $data->getElementsByTagName("link")->item(0)->nodeValue;
      echo "<ul>
-            <h2>ID:$id</h2>
+            <h2>title: $title</h2>
               <ul>
                   <li>title: $title </li>
                   <li>description: $description </li>
