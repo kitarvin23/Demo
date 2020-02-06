@@ -1,28 +1,33 @@
-
 <?php
- $domOBJ = new DOMDocument();
- $domOBJ->load("https://kitarvin23.herokuapp.com/rss.php");//XML page URL
- 
- $content = $domOBJ->getElementsByTagName("book");
- 
- ?>
- <ul>
-    <?php
- foreach( $content as $data )
- {
-   $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
-   $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
-   $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
-  
-    echo "
-            <li>$title
-            <ul>
-                <li>$link</li>
-                <li>$description</li>
-            </ul>
-            </li>
-         ";
- 
+// Create connection
+$con = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com", "admin", "root1234", "db_1820771");	
+
+// Check connection
+ if (mysqli_connect_errno($con)) {
+ echo "Database connection failed!: " . mysqli_connect_error();
  }
+ 
+ $sql = "SELECT * FROM rss_info";
+
+ $query = mysqli_query($con,$sql);
+ 
+ header( "Content-type:");
+ 
+ echo "<?xml version='1.0' encoding='UTF-8'?>
+ <rss version='2.0'>
+ <channel>
+ <title></title>
+ <link></link>
+ <language>en-us</language>";
+ 
+ while($row = mysqli_fetch_array($query)){
+   $title=$row["title"];
+   $link=$row["link"];
+ 
+   echo "<item>
+   <title>$title</title>
+   <link>$link</link>
+   </item>";
+ }
+ echo "</channel></rss>";
 ?>
-</ul>
