@@ -12,6 +12,8 @@ $query = mysqli_query($connect,$sql) or die (mysqli_error($connect));
 while($record= mysqli_fetch_assoc($query)) {
     extract($record);
     $rss .= '<book>';
+    
+    $rss .= '<ID>' .$id . '</ID>';
     $rss .= '<title>' .$title . '</title>';
     $rss .= '<link>' . $link . '</link>';
     $rss .= '<description>' . $description . '</description>';
