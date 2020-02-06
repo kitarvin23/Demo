@@ -8,23 +8,16 @@ $connect = mysqli_connect("dbrojasdev.cjw42bnplsor.us-east-1.rds.amazonaws.com",
 $sql = "SELECT * FROM rss_info";
 $query = mysqli_query($connect,$sql) or die (mysqli_error($connect));
  
- $content = $domOBJ->getElementsByTagName("item");
- 
- ?>
- <ul>
-    <?php
- foreach( $content as $data )
- {
-   $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
-   $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
-  
-    echo "{<li>$title
-            <ul>
-                <li>$link</li>
-            </ul>
-        </li>}";
- 
- }
-?>
-</ul>
 
+while($record= mysqli_fetch_assoc($query)) {
+    extract($record);
+    $rss .= '<book>';
+    $rss .= '<title>' .$title . '</title>';
+    $rss .= '<link>' . $link . '</link>';
+    $rss .= '<description>' . $description . '</description>';
+    $rss .= '</book>';
+}
+$rss .= '</channel>';
+$rss .= '</rss>';
+
+echo  $rss  ; 
