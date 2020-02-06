@@ -14,7 +14,7 @@ $domOBJ->load("https://kitarvin23.herokuapp.com/index.php");//XML page URL
    $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
     echo '{';
     echo $title;
-   echo ','
+   echo ',';
     echo $link;
     echo '}';
  
