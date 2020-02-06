@@ -16,7 +16,7 @@
   
     echo "<li>$title
             <ul>
-                <li>link</li>
+                <li>$link</li>
                 <li>$description</li>
             </ul>
         </li>";
