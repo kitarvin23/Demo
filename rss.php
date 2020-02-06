@@ -5,7 +5,7 @@
     if(mysqli_connect_errno($conn)){
         echo "Database connection failed!: ". mysqli_connect_errno();
     }
-    $sql = "SELECT * FROM tbl_music ORDER BY mus_id DESC LIMIT 20";
+    $sql = "SELECT * FROM tbl_gadget ORDER BY mus_id DESC LIMIT 20";
     $q = mysqli_query($conn, $sql);
 
     header("Content-type: text/xml");
@@ -15,16 +15,16 @@
     
     while($r = mysqli_fetch_array($q)){
 
-        $title = $r['title'];
-        $genre = $r['genre'];
-        $artist = $r['artist'];
-        $album = $r['album'];
+        $brand = $r['brand'];
+        $cost = $r['cost'];
+        $year = $r['year'];
+        $color = $r['color'];
 
         echo "<track>
-        <title>$title</title>
-        <genre>$genre</genre>
-        <artist>$artist</artist>
-        <album>$album</album>
+        <title>$brand</title>
+        <genre>$cost</genre>
+        <artist>$year</artist>
+        <album>$color</album>
         </track>";
     }
     echo "</channel></rss>";
